@@ -52,6 +52,10 @@ class User extends Authenticatable
         'profile_photo_url',
     ];
 
+    protected $dispatchesEvents = [
+        'created' => \App\Events\UserCreated::class,
+    ];
+
     /**
      * Get the attributes that should be cast.
      *
